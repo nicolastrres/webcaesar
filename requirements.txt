@@ -1,1 +1,2 @@
-Flask
+flask==0.10.1
+pycaesar==0.2.2
