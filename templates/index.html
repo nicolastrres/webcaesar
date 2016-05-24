@@ -5,10 +5,11 @@
     <title>Webcaesar</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='normalize.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='skeleton.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}"/>
 </head>
 <body>
     <h1> Webcaesar</h1>
-    <h2> Yet another Caesar cipher</h2>
+    <div class="subtitle"> Yet another Caesar cipher</div>
     <form method="POST" action="{{ url_for('encrypt') }}">
         <label for="plain_text">Text to encrypt</label>
         <input id="plain_text" type="text" name="plain_text"/>
@@ -18,10 +19,9 @@
             {% endfor %}
         </select>
         <button type="submit">Encrypt!</button>
-
-        {%  if cipher_text %}
-            <h3>{{ cipher_text }}</h3>
-        {% endif %}
     </form>
+    {%  if cipher_text %}
+        <h2 class="cipher-text">{{ cipher_text }}</h2>
+    {% endif %}
 </body>
 </html>

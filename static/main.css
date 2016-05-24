@@ -1,0 +1,21 @@
+h1, form {
+    text-align: center;
+}
+
+h4 {
+    font-style: italic;
+}
+
+.subtitle {
+    text-align: center;
+}
+
+form {
+    margin-top: 10%;
+}
+
+.cipher-text {
+    text-align: center;
+    -webkit-box-shadow: 2px 2px 1px 1px #ccc;
+    box-shadow: 1px 0px 1px 1px #ccc;
+}
