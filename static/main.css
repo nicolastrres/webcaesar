@@ -1,21 +1,22 @@
-h1, form {
+h1 {
     text-align: center;
-}
-
-h4 {
-    font-style: italic;
+    margin-bottom: 0;
 }
 
 .subtitle {
     text-align: center;
+    font-style: italic;
 }
 
 form {
     margin-top: 10%;
+    text-align: center;
 }
 
 .cipher-text {
     text-align: center;
     -webkit-box-shadow: 2px 2px 1px 1px #ccc;
     box-shadow: 1px 0px 1px 1px #ccc;
+    margin-left: 10%;
+    width: 80%;
 }
