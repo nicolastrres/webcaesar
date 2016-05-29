@@ -5,15 +5,24 @@ html {
 }
 
 body {
-    color: #FFFFFF;
+    color: #FFF;
 }
 
 textarea, select {
-    color: #000000;
+    color: #000;
 }
 
 .button {
-    color: #FFFFFF;
+    color: #FFF;
+}
+
+.button:hover {
+    color: #d3b8ff;
+}
+
+.no-decoration-link {
+    text-decoration: none;
+    color: #FFF;
 }
 
 h1 {
