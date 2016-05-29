@@ -15,13 +15,14 @@ def index():
 def encrypt():
     if request.method == 'POST':
         # TODO: sanitize input
-        if request.form.get('algorithm') == 'encrypt':
-            cipher_text = pycaesar.encrypt(request.form.get('plain_text'), request.form.get('key'))
-            return render_template('index.html', cipher_text=cipher_text)
-        elif request.form.get('algorithm') == 'decrypt':
-            cipher_text = pycaesar.decrypt(request.form.get('plain_text'), request.form.get('key'))
-            return render_template('index.html', cipher_text=cipher_text)
-        else:
+        algorithms = {
+            'encrypt': pycaesar.encrypt(request.form.get('plain_text'), request.form.get('key')),
+            'decrypt': pycaesar.decrypt(request.form.get('plain_text'), request.form.get('key'))
+        }
+        try:
+            return_text = algorithms[request.form.get('algorithm')]
+            return render_template('index.html', cipher_text=return_text)
+        except KeyError:
             return render_template(
                 'index.html',
                 cipher_text='',
