@@ -30,8 +30,8 @@ class WebCaesarTest(unittest.TestCase):
             data=dict(plain_text='bhvtujo ojdpmbt', key=1, algorithm='invalid'),
             follow_redirects=True
         )
-        assert 'Invalid algorithm selected, please choose between encrypt and decrypt'\
-                in str(response.data)
+        assert 'Invalid algorithm selected, please choose' \
+               ' between encrypt and decrypt' in str(response.data)
 
 if __name__ == '__main__':
     unittest.main()
