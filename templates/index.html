@@ -12,7 +12,7 @@
     <div class="subtitle"> Yet another Caesar cipher</div>
     <form method="POST" action="{{ url_for('encrypt') }}">
         <label for="plain_text">Text to encrypt</label>
-        <input id="plain_text" type="text" name="plain_text"/>
+        <textarea id="plain_text" type="text" name="plain_text"></textarea>
         <select name="key">
             {% for i in range(1, 26) %}
                 <option value="{{ i }}">{{ i }}</option>
