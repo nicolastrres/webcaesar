@@ -15,8 +15,18 @@ def index():
 def encrypt():
     if request.method == 'POST':
         # TODO: sanitize input
-        cipher_text = pycaesar.encrypt(request.form.get('plain_text'), request.form.get('key'))
-        return render_template('index.html', cipher_text=cipher_text)
+        if request.form.get('algorithm') == 'encrypt':
+            cipher_text = pycaesar.encrypt(request.form.get('plain_text'), request.form.get('key'))
+            return render_template('index.html', cipher_text=cipher_text)
+        elif request.form.get('algorithm') == 'decrypt':
+            cipher_text = pycaesar.decrypt(request.form.get('plain_text'), request.form.get('key'))
+            return render_template('index.html', cipher_text=cipher_text)
+        else:
+            return render_template(
+                'index.html',
+                cipher_text='',
+                error='Invalid algorithm selected, please choose between encrypt and decrypt'
+            )
     else:
         return render_template('index.html')
 
