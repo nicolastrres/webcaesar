@@ -15,17 +15,17 @@
     {% endif %}
     <form method="POST" action="{{ url_for('encrypt') }}">
         <label for="plain_text">Text to encrypt</label>
-        <textarea id="plain_text" type="text" name="plain_text"></textarea>
-        <select name="key">
+        <textarea id="plain_text" type="text" name="plain_text" placeholder="Write text to encrypt here..."></textarea>
+        <select name="key" class="encrypt-options">
             {% for i in range(1, 26) %}
                 <option value="{{ i }}">{{ i }}</option>
             {% endfor %}
         </select>
-        <select name="algorithm">
+        <select name="algorithm" class="encrypt-options">
             <option value="encrypt">Encrypt</option>
             <option value="decrypt">Decrypt</option>
         </select>
-        <button class="button" type="submit">Lets do it!</button>
+        <button class="button encrypt-options" type="submit">Lets do it!</button>
     </form>
     {%  if cipher_text %}
         <h2 class="cipher-text">{{ cipher_text }}</h2>

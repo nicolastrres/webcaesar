@@ -8,6 +8,16 @@ body {
     color: #FFF;
 }
 
+textarea {
+    height: 200px;
+    font-size: 4rem;
+}
+
+.encrypt-options {
+    font-size: 3rem;
+    height: 90px;
+}
+
 textarea, select {
     color: #000;
 }
@@ -28,17 +38,24 @@ textarea, select {
 h1 {
     text-align: center;
     margin-bottom: 0;
+    font-size: 13.0rem;
 }
 
 .subtitle {
     text-align: center;
     font-style: italic;
+    font-size: 5rem;
 }
 
 form {
     margin-top: 10%;
     text-align: center;
 }
+
+label {
+    visibility: hidden;
+}
+
 
 #plain_text {
     display: block;
@@ -52,4 +69,24 @@ form {
     box-shadow: 1px 0px 1px 1px #ccc;
     margin-left: 10%;
     width: 80%;
+}
+
+@media(min-width: 1024px){
+    h1 {
+        font-size: 4.0rem;
+    }
+    .subtitle {
+        font-size: 1.5rem;
+    }
+    label {
+        visibility: visible;
+    }
+    textarea {
+        font-size: 1.4rem;
+        height: 100px;
+    }
+    .encrypt-options {
+        font-size: 1rem;
+        height: 38px;
+    }
 }
